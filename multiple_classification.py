@@ -12,12 +12,12 @@ from streamlit_option_menu  import option_menu
 #load model
 loan_model = pickle.load(open('loan_model.sav','rb'))
 ridingmower_model = pickle.load(open('RidingMowers_model.sav','rb'))
-
+bmi_model = pickle.load(open('bmi_model.sav','rb')) 
 
 with st.sidebar:
     selected = option_menu(
         'Classification',
-        ['Loan',"RidingMower"])
+        ['Loan',"RidingMower","BMI"])
 
 if(selected == 'RidingMower'):
     st.title('RidingMower Predict')
@@ -81,5 +81,25 @@ if(selected == 'Loan'):
     
     st.success(loan_predict)
         
-        
+      if(selected == 'BMI'):
+    st.title('BMI Classification')
+    
+    Gender = st.text_input('Gender')
+    Height = st.text_input('Height (cm)')
+    Weight = st.text_input('Weight (kg)')
+    ridingmower_predict = ''
+    
+    if st.button('Predict'):
+        bmi_predict = bmi_model.predict([[ 
+            float(Gender),
+            float(Height),
+            float(Weight)
+        ]])
+        if bmi_predict[0]==0:
+            bmi_predict='Non Owner'
+        else:
+            bmi_predict = 'Owner'
+    
+    st.success(bmi_predict)  
+
 
