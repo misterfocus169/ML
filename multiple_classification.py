@@ -85,6 +85,7 @@ if(selected == 'BMI'):
     st.title('BMI Classification')
     
     Gender = st.selectbox('Gender', ['Male', 'Female'])
+    gender_value = 0 if gender_input == 'Male' else 1
     Height = st.text_input('Height (cm)')
     Weight = st.text_input('Weight (kg)')
     bmi_predict = ''
@@ -101,6 +102,7 @@ if(selected == 'BMI'):
             bmi_predict = 'Obesity'
     
     st.success(bmi_predict)
+
 
 
 
