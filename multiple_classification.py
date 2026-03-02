@@ -81,7 +81,7 @@ if(selected == 'Loan'):
     
     st.success(loan_predict)
         
-      if(selected == 'BMI'):
+if(selected == 'BMI'):
     st.title('BMI Classification')
     
     Gender = st.text_input('Gender')
@@ -101,6 +101,7 @@ if(selected == 'Loan'):
             bmi_predict = 'Obesity'
     
     st.success(bmi_predict)  
+
 
 
 
