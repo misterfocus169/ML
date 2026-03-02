@@ -101,8 +101,9 @@ if(selected == 'BMI'):
             bmi_predict = 'Obesity'
     
     st.success(bmi_predict)
-        except ValueError:
-            st.error("กรุณากรอกตัวเลขในช่องส่วนสูงและน้ำหนัก")
+except ValueError:
+    st.error("กรุณากรอกตัวเลขในช่องส่วนสูงและน้ำหนัก")
+
 
 
 
