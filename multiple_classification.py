@@ -84,7 +84,7 @@ if(selected == 'Loan'):
 if(selected == 'BMI'):
     st.title('BMI Classification')
     
-    Gender = st.text_input('Gender')
+    Gender = st.selectbox('Gender', ['Male', 'Female'])
     Height = st.text_input('Height (cm)')
     Weight = st.text_input('Weight (kg)')
     bmi_predict = ''
@@ -96,11 +96,14 @@ if(selected == 'BMI'):
             float(Weight)
         ]])
         if bmi_predict[0]==0:
-            bmi_predict='Non Owner'
+            bmi_predict='Weak'
         else:
             bmi_predict = 'Obesity'
     
-    st.success(bmi_predict)  
+    st.success(bmi_predict)
+        except ValueError:
+            st.error("กรุณากรอกตัวเลขในช่องส่วนสูงและน้ำหนัก")
+
 
 
 
