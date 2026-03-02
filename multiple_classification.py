@@ -87,7 +87,7 @@ if(selected == 'Loan'):
     Gender = st.text_input('Gender')
     Height = st.text_input('Height (cm)')
     Weight = st.text_input('Weight (kg)')
-    ridingmower_predict = ''
+    bmi_predict = ''
     
     if st.button('Predict'):
         bmi_predict = bmi_model.predict([[ 
@@ -101,5 +101,6 @@ if(selected == 'Loan'):
             bmi_predict = 'Owner'
     
     st.success(bmi_predict)  
+
 
 
