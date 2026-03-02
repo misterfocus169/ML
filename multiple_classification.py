@@ -17,7 +17,7 @@ bmi_model = pickle.load(open('bmi_model.sav','rb'))
 with st.sidebar:
     selected = option_menu(
         'Classification',
-        ['Loan',"RidingMower","BMI"])
+        ['Loan',"RidingMower",'BMI'])
 
 if(selected == 'RidingMower'):
     st.title('RidingMower Predict')
@@ -98,9 +98,10 @@ if(selected == 'Loan'):
         if bmi_predict[0]==0:
             bmi_predict='Non Owner'
         else:
-            bmi_predict = 'Owner'
+            bmi_predict = 'Obesity'
     
     st.success(bmi_predict)  
+
 
 
 
